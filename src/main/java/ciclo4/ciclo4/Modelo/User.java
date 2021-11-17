@@ -24,8 +24,9 @@ public class User implements Serializable{
     
     @Column(name="user_email", unique = true)
     private String email;
-    private String name;
     private String password;
+    private String name;
+    
 
     public User() {
     }
@@ -33,14 +34,16 @@ public class User implements Serializable{
     public User(Integer id, String email, String name, String password) {
         this.id = id;
         this.email = email;
-        this.name = name;
         this.password = password;
+        this.name = name;
+        
     }
     
     public User(String email, String name, String password) {
         this.email = email;
-        this.name = name;
         this.password = password;
+        this.name = name;
+        
     }
 
     public Integer getId() {
@@ -58,6 +61,14 @@ public class User implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -67,12 +78,6 @@ public class User implements Serializable{
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
 }
