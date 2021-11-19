@@ -14,8 +14,8 @@ function consultar(dato){
         success:function(respuesta){
             //console.log(respuesta,dato);
             if(respuesta.id!=null && dato==1){
-                $("#header").html("BIENVENIDO");
-                $("#bienvenido").html("<h1 align='center'>"+respuesta.name+"</p>");
+                $("#header").html("BIENVENIDO <br>"+respuesta.name);
+                traerInformacion();
             }else if((respuesta.id==null && dato==2)){
                 $("#resultado").html("<p class='loader text-center'>Creando la cuenta...</p>");
                 guardar();
@@ -26,6 +26,50 @@ function consultar(dato){
             
         }
     });
+}
+
+function traerInformacion(){
+    $("#id").hide()
+    $("#resultado").html("<p class='loader text-center'>Cargando...</p>"); 
+    $.ajax({
+        url:"http://144.22.228.79:80/api/user/all",
+        type:"GET",
+        datatype:"JSON",
+        success:function(respuesta){
+            console.log(respuesta);
+            pintarRespuesta(respuesta);
+        }
+    });
+}
+
+function pintarRespuesta(items){
+    //$("#resultado").remove();
+    
+    let myTable = "<table id='userList'>";
+    let tableHeader = `<thead><tr>
+    <th>ID</th>
+    <th>NOMBRE</th>
+    <th>CORREO</th>
+    <th>CONTRASEÑA</th>
+    </thead></tr>`;
+    myTable += tableHeader;
+
+    
+    for (i=0; i<items.length; i++ ) {
+        
+        myTable+="<tr>";
+        myTable+="<td>"+items[i].id+"</td>";
+        myTable+="<td>"+items[i].name+"</td>";
+        myTable+="<td>"+items[i].email+"</td>";
+        myTable+="<td>"+items[i].password+"</td>";
+        myTable+="</tr>";
+    }
+    myTable+="</table>";
+    //$("#id").val(items.length+1)
+    $("#resultado").html(myTable);
+    $("#email").hide();
+    $("#password").hide();
+    $("#btn-consultar").hide();
 }
 
 function crearCuenta(){
@@ -75,7 +119,7 @@ function validarEmail(){
         success:function(respuesta){
             console.log(respuesta);
             if(respuesta==true){
-                $("#validarCampos").html("<p align='center' style='color:black'>¿Ya tienes cuenta? <a id='link' href='javascript:location.reload()'>Crea tu cuenta aquí.<a></p>");
+                $("#validarCampos").html("<p align='center' style='color:black'>El correo ya se encuentra registrado, <a id='link' href='javascript:location.reload()'>Iniciar sesión.<a></p>");
             }else{
                 consultar(2);
             }

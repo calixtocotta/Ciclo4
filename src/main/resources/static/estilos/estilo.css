@@ -161,7 +161,7 @@ img {
 .d-flex{
     display: flex;
     flex-wrap: wrap;
-    min-width: 600px;
+    min-width: auto;
 }
 
 table {
@@ -253,10 +253,11 @@ img {
     width: 30px;
     left: 30px;
 }
-
+/*
 tr {
     cursor: pointer;
 }
+*/
 
 
 @media screen and (max-width: 700px) {

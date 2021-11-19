@@ -19,14 +19,17 @@
 
 <section class="container" >
     <div class="card" id="bienvenido">
-        <div id="resultado"></div>
+        <div id="resultado">
+        </div>
+        
+
         <h4 id="validarCampos" class="text-center" style="color: rgba(255, 255, 255, 0.767)"><span>&#160</span></h4>
-        <div class="mb-10px d-flex text-center">
+        <div class="mb-10px d-flex text-center" >
             
             <input id="email" type="email" placeholder="Correo" required maxlength="50" pattern=".+@+.+">
             <input id="password" type="password" placeholder="Contraseña" required maxlength="50">
             <input id="confirmar" type="password" placeholder="Confirmar contraseña" required maxlength="50" hidden>
-            <input id="name" type="text" placeholder="Nombre" required maxlength="50" hidden>
+            <input id="name" type="text" placeholder="Nombre" required maxlength="80" hidden>
         </div>
         <diV class="text-center">
             <button class="btn-info btn-gradient mb-10px mr-10px" id="btn-consultar" onclick="validar()">Consultar</button>
