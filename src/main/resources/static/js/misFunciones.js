@@ -3,7 +3,7 @@
 //function traerInformacion(){location.reload(true);}
 //Función para actualizar cada 60 segundos(60000 milisegundos)
 //setInterval("traerInformacion()",60000);
-
+//traerInformacion();
 
 function consultar(dato){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
@@ -45,16 +45,14 @@ function traerInformacion(){
 function pintarRespuesta(items){
     //$("#resultado").remove();
     
-    let myTable = "<table id='userList'>";
+    let myTable = "<table id='userList' class='table-responsive'>";
     let tableHeader = `<thead><tr>
     <th>ID</th>
     <th>NOMBRE</th>
     <th>CORREO</th>
     <th>CONTRASEÑA</th>
-    </thead></tr>`;
+    </tr></thead>`;
     myTable += tableHeader;
-
-    
     for (i=0; i<items.length; i++ ) {
         
         myTable+="<tr>";
