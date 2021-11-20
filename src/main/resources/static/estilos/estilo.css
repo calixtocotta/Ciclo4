@@ -15,6 +15,7 @@ body{
     min-height: 100vh;
     max-width: 120vw;
     background-image: linear-gradient(90deg, rgba(50,232,199,1) 0%, rgba(0,172,255,1) 100%);
+    
 }
 body * {
     transition: all 0.15s linear;
@@ -266,23 +267,25 @@ tr {
 
 @media screen and (max-width: 800px) {
     table {
-        width: 100%;
-        margin-bottom: 15px;
-        overflow-y: hidden;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
+        width: auto;
         min-width: auto;
+        
     }
-    .table-responsive > .table {
-        margin-bottom: 0;
+    thead {
+        display: none;
     }
-    .table-responsive > .table > thead > tr > th,
-    .table-responsive > .table > tbody > tr > th,
-    .table-responsive > .table > tfoot > tr > th,
-    .table-responsive > .table > thead > tr > td,
-    .table-responsive > .table > tbody > tr > td,
-    .table-responsive > .table > tfoot > tr > td {
-        white-space: nowrap;
+    tr:nth-of-type(2n) {
+        background-color: inherit;
     }
+    tbody td {
+        display: block;
+        text-align:center;
+    }
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align:center;
+    }
+    
 
 }
-
