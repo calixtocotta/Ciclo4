@@ -3,7 +3,7 @@
 //function traerInformacion(){location.reload(true);}
 //Función para actualizar cada 60 segundos(60000 milisegundos)
 //setInterval("traerInformacion()",60000);
-traerInformacion();
+//traerInformacion();
 
 function consultar(dato){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
@@ -68,6 +68,9 @@ function pintarRespuesta(items){
     $("#email").hide();
     $("#password").hide();
     $("#btn-consultar").hide();
+    $("#confirmar").hide();
+    $("#btn-guardar").hide();
+    $("#name").hide();
 }
 
 function crearCuenta(){
@@ -147,10 +150,11 @@ function guardar(){
             $("#resultado").html("<p class='loader text-center'>Cuenta creada, espere para ser redireccionado...</p>");
             setTimeout(
                 function(){ 
-                    $("#header").html("BIENVENIDO");
-                    $("#bienvenido").html("<h1 align='center'>"+respuesta.name+"</p>");
+                    $("#header").html("BIENVENIDO <br>"+respuesta.name);
+                    traerInformacion();
                 }, 6000
             );
+
         }
     });
 
