@@ -3,7 +3,7 @@
 //function traerInformacion(){location.reload(true);}
 //Función para actualizar cada 60 segundos(60000 milisegundos)
 //setInterval("traerInformacion()",60000);
-//traerInformacion();
+traerInformacion();
 
 function consultar(dato){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
@@ -56,10 +56,10 @@ function pintarRespuesta(items){
     for (i=0; i<items.length; i++ ) {
         
         myTable+="<tr>";
-        myTable+="<td>"+items[i].id+"</td>";
-        myTable+="<td>"+items[i].name+"</td>";
-        myTable+="<td>"+items[i].email+"</td>";
-        myTable+="<td>"+items[i].password+"</td>";
+        myTable+="<td data-titulo='ID:'>"+items[i].id+"</td>";
+        myTable+="<td data-titulo='NOMBRE:'>"+items[i].name+"</td>";
+        myTable+="<td data-titulo='CORREO:'>"+items[i].email+"</td>";
+        myTable+="<td data-titulo='CONTRASEÑA:'>"+items[i].password+"</td>";
         myTable+="</tr>";
     }
     myTable+="</table>";

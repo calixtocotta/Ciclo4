@@ -61,6 +61,13 @@ table{
     overflow-x: auto;
 }
 
+td, th{
+    padding: 5px 10px;
+}
+main{
+    padding: 1em 2em;
+}
+
 table > thead{
     background-color: #383838;
     color: #fff;
@@ -80,12 +87,15 @@ table > tbody > tr>td{
 }
 
 
+
+
 .card{
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #eee;
     background-color: rgba(255, 255, 255, 0.767);
     box-shadow: 1px 2px 23px -15px #000000b5;
+    width: 90%;
 }
 
 .ml-auto{
@@ -267,25 +277,39 @@ tr {
 
 @media screen and (max-width: 800px) {
     table {
-        width: auto;
-        min-width: auto;
+        width: 80%;
+        min-width: 80%;
+        font-size: 0.9em;
         
     }
-    thead {
-        display: none;
-    }
-    tr:nth-of-type(2n) {
-        background-color: inherit;
-    }
-    tbody td {
-        display: block;
-        text-align:center;
-    }
-    tbody td:before {
-        content: attr(data-th);
-        display: block;
-        text-align:center;
+
+    table tr{
+        display: flex;
+        flex-direction: column;
+        padding: 0.8em;
+        margin-bottom: 0.8em;
+        border: 1px solid grey;
+        width: 80%;
+        height: 100%;
+        border-radius: 20px;
     }
     
+    table thead{
+        display: none;
+    }
 
+    table td[data-titulo]{
+        display: flex;
+    }
+
+    table td[data-titulo]::before{
+        content: attr(data-titulo);
+        width: 120px;
+        color: rgb(8, 8, 8);
+        
+    }
+
+    table thead{
+        display: none;
+    }
 }
