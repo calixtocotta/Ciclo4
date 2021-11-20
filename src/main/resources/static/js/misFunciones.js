@@ -105,7 +105,12 @@ function validar2(){
             //guardar();
         }else{
             $("#validarCampos").html("<h4 style='color: red'>La contraseña no coincide</h4>");
-            //console.log("la contraseña no coincide");
+            setTimeout(
+                function(){ 
+                    $("#validarCampos").html("<h4 style='color: red'>La contraseña no coincide</h4>");
+                    traerInformacion();
+                }, 6000
+            );
             
         }
         
