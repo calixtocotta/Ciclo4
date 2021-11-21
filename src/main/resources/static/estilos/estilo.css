@@ -276,8 +276,19 @@ tr {
 }
 
 @media screen and (max-width: 800px) {
+
+    body{
+        float:left;
+        transform: scale(0.9);
+        
+    }
+
+    .container{
+        width: 100%;
+        min-width: auto;
+    }
     table {
-        width: 80%;
+        width: 120%;
         min-width: 80%;
         font-size: 0.9em;
         
@@ -313,3 +324,4 @@ tr {
         display: none;
     }
 }
+

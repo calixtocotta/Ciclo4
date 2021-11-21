@@ -5,6 +5,20 @@
 //setInterval("traerInformacion()",60000);
 //traerInformacion();
 
+document.getElementById('email').addEventListener('input', function() {
+    let campo = event.target;
+    let valido = document.getElementById('emailOK');
+
+    let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+    if (emailRegex.test(campo.value)) {
+        $("#btn-consultar").attr("disabled",false);
+        $("#resultado").html("");
+    } else {
+        $("#resultado").html("<p class='loader text-center'>Debe ingresar un correo valido</p>");
+    }
+});
+
 function consultar(dato){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
     $.ajax({
@@ -89,6 +103,7 @@ function validar(){
         $("#validarCampos").html("<h4 style='color: red'>Todos los campos son necesarios</h4>");
         return false;
     }else{
+        $("#validarCampos").html("");
         consultar(1);
     }
 }
@@ -98,9 +113,10 @@ function validar2(){
     if ($('#email').val().length == 0 || $('#password').val().length == 0 || $('#confirmar').val().length == 0 || $('#name').val().length == 0) {
         $("#validarCampos").html("<h4 style='color: red'>Todos los campos son necesarios</h4>");
         return false;
-    }else{
+    }else{ 
+        
         if($('#password').val() == $('#confirmar').val()){
-
+            $("#validarCampos").html("");
             validarEmail();
             //guardar();
         }else{
