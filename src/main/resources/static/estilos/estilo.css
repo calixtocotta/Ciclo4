@@ -280,11 +280,13 @@ tr {
     body{
         float:left;
         transform: scale(0.9);
+        width: 100%;
+        
         
     }
 
     .container{
-        width: 100%;
+        width: 80%;
         min-width: auto;
     }
     table {
