@@ -2,7 +2,7 @@
 package ciclo4.ciclo4.Servicios;
 
 import ciclo4.ciclo4.Modelo.User;
-import ciclo4.ciclo4.Repositorio.UserRepositorio;
+import ciclo4.ciclo4.Repositorio.userRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class serviciosUser {
     
     @Autowired
-    private UserRepositorio metodosCrud;
+    private userRepositorio metodosCrud;
     
 
     
@@ -23,26 +23,18 @@ public class serviciosUser {
     public Optional<User> getUser(int id){
         return metodosCrud.getUser(id);
     }
-
-    public boolean getExistsEmail(String email){
-        return metodosCrud.getExistsEmail(email);
+    
+    public boolean existeEmail(String email){
+            return metodosCrud.existeEmail(email);
     }
     
     public User getExistsEmailAndPassword(String email, String password){
         
         return metodosCrud.getExistsEmailAndPassword(email,password);
     }
-
     
-    public User save(User user) throws Exception{
-        
-        /*
-        Optional<User> userFound = metodosCrud.getFindByEmail(user.getEmail());
-        if(userFound.isPresent()){
-            throw new Exception("El correo ya existe");
-        }else{
-        */
-        try {
+    
+    public User save(User user){
             if(user.getId()==null){
                 return metodosCrud.save(user);
             }else{
@@ -53,15 +45,6 @@ public class serviciosUser {
                     return  user;
                 }
             }
-        } catch (Exception e) {
-            
-           throw new Exception("El correo ya existe");
-            
-        }
-        
-            
-        //}
-        
     }
     
     public User update(User user){
@@ -96,6 +79,5 @@ public class serviciosUser {
         return del;
     }
 
-    
 
 }

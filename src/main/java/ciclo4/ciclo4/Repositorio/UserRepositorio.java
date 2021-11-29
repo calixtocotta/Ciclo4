@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserRepositorio {
+public class userRepositorio {
     
     @Autowired
     private interfaceUser crud;
@@ -23,14 +23,15 @@ public class UserRepositorio {
         return crud.findById(id);
     }
     
-    public boolean getExistsEmail(String email){
-        return crud.existsByEmail(email);
+    public boolean existeEmail(String email){
+            Optional<User> usuario = crud.findByEmail(email);
+            return  !usuario.isEmpty();
     }
     
     public User getExistsEmailAndPassword(String email, String password){
         return crud.findAllByEmailAndPassword(email, password);
     }
-
+    
     public User save(User user){
         return crud.save(user);
     }
@@ -38,9 +39,11 @@ public class UserRepositorio {
     public void delete(User user){
         crud.delete(user);
     }
+    
     /*
     public Optional<User> getFindByEmail(String user) {
         return crud.findByEmail(String user);
     }
     */
+    
 }

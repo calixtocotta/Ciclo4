@@ -22,7 +22,7 @@ document.getElementById('email').addEventListener('input', function() {
 function consultar(dato){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
     $.ajax({
-        url:"http://144.22.228.79:80/api/user/"+$('#email').val()+"/"+$('#password').val(),
+        url:"http://localhost:8080/api/user/"+$('#email').val()+"/"+$('#password').val(),
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -46,7 +46,7 @@ function traerInformacion(){
     $("#id").hide()
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>"); 
     $.ajax({
-        url:"http://144.22.228.79:80/api/user/all",
+        url:"http://localhost:8080/api/user/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -135,7 +135,7 @@ function validar2(){
 function validarEmail(){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
     $.ajax({
-        url:"http://144.22.228.79:80/api/user/"+$('#email').val(),
+        url:"http://localhost:8080/api/user/"+$('#email').val(),
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -162,7 +162,7 @@ function guardar(){
     //console.log(dataToSend);
     
     $.ajax({
-        url: "http://144.22.228.79:80/api/user/new",
+        url: "http://localhost:8080/api/user/new",
         type: "POST",
         data: dataToSend,
         contentType:"application/JSON",
