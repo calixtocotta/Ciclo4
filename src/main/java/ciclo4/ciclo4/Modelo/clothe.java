@@ -2,9 +2,9 @@
 package ciclo4.ciclo4.Modelo;
 
 
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
 //import lombok.Data;
-import lombok.NoArgsConstructor;
+//import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 
