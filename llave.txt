@@ -1,3 +1,13 @@
 ssh -i ssh-key-2021-10-09.key opc@144.22.228.79
 
 mvn clean package -DskipTests
+
+sudo yum install git
+	sudo yum install java-11-openjdk-devel
+	sudo yum-config-manager --add-repo http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+	sudo yum-config-manager --enable epel-apache-maven
+	sudo yum install -y apache-maven
+	sudo alternatives --config java
+	sudo alternatives --config javac
+	sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
+	sudo firewall-cmd --reload

@@ -2,11 +2,6 @@
 package ciclo4.ciclo4.Modelo;
 
 import org.springframework.data.annotation.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -28,7 +23,7 @@ public class User{
     private String identification;
     private String name;
     private String address;
-    private Integer cellPhone;
+    private String cellPhone;
     private String email;
     private String password;
     private String zone;
@@ -37,7 +32,7 @@ public class User{
     public User() {
     }
 
-    public User(Integer id, String identification, String name, String address, Integer cellPhone, String email, String password, String zone, String type) {
+    public User(Integer id, String identification, String name, String address, String cellPhone, String email, String password, String zone, String type) {
         this.id = id;
         this.identification = identification;
         this.name = name;
@@ -81,11 +76,11 @@ public class User{
         this.address = address;
     }
 
-    public Integer getCellPhone() {
+    public String getCellPhone() {
         return cellPhone;
     }
 
-    public void setCellPhone(Integer cellPhone) {
+    public void setCellPhone(String cellPhone) {
         this.cellPhone = cellPhone;
     }
 
