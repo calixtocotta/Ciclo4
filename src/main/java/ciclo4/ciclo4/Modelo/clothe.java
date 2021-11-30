@@ -15,7 +15,7 @@ import org.springframework.data.annotation.Id;
  *
  * @author calix
  */
-@Document(collection = "clothe")
+@Document(collection = "Clothe")
 /*@Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -108,6 +108,5 @@ public class Clothe{
     public void setPhotography(String photography) {
         this.photography = photography;
     }
-    
     
 }
