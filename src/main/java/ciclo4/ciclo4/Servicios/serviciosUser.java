@@ -51,14 +51,32 @@ public class serviciosUser {
         if (user.getId()!=null){
             Optional<User> evt = metodosCrud.getUser(user.getId());
             if (!evt.isEmpty()){
-                if (user.getEmail()!=null){
-                    evt.get().setEmail(user.getEmail());
+                if (user.getIdentification()!=null){
+                    evt.get().setEmail(user.getIdentification());
                 }
-                if (user.getPassword()!=null){
-                    evt.get().setPassword(user.getPassword());
+                if (user.getName()!=null){
+                    evt.get().setPassword(user.getName());
                 }
                 if (user.getName()!=null){
                     evt.get().setName(user.getName());
+                }
+                if (user.getAddress()!=null){
+                    evt.get().setEmail(user.getAddress());
+                }
+                if (user.getCellPhone()!=null){
+                    evt.get().setName(user.getCellPhone());
+                }
+                if (user.getEmail()!=null){
+                    evt.get().setEmail(user.getEmail());
+                }              
+                if (user.getPassword()!=null){
+                    evt.get().setPassword(user.getPassword());
+                }
+                if (user.getZone()!=null){
+                    evt.get().setName(user.getZone());
+                }
+                if (user.getType()!=null){
+                    evt.get().setName(user.getType());
                 }
                 metodosCrud.save(evt.get());
                 return evt.get();
