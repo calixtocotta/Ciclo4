@@ -55,16 +55,13 @@ public class serviciosUser {
                     evt.get().setEmail(user.getIdentification());
                 }
                 if (user.getName()!=null){
-                    evt.get().setPassword(user.getName());
-                }
-                if (user.getName()!=null){
                     evt.get().setName(user.getName());
                 }
                 if (user.getAddress()!=null){
-                    evt.get().setEmail(user.getAddress());
+                    evt.get().setAddress(user.getAddress());
                 }
                 if (user.getCellPhone()!=null){
-                    evt.get().setName(user.getCellPhone());
+                    evt.get().setCellPhone(user.getCellPhone());
                 }
                 if (user.getEmail()!=null){
                     evt.get().setEmail(user.getEmail());
@@ -73,10 +70,10 @@ public class serviciosUser {
                     evt.get().setPassword(user.getPassword());
                 }
                 if (user.getZone()!=null){
-                    evt.get().setName(user.getZone());
+                    evt.get().setZone(user.getZone());
                 }
                 if (user.getType()!=null){
-                    evt.get().setName(user.getType());
+                    evt.get().setType(user.getType());
                 }
                 metodosCrud.save(evt.get());
                 return evt.get();
