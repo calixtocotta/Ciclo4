@@ -77,7 +77,7 @@ public class userController {
     public ResponseEntity update(@RequestBody User user) {
         User u = servicios.update(user);
         
-        return new ResponseEntity(u, HttpStatus.OK);
+        return new ResponseEntity(u, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
