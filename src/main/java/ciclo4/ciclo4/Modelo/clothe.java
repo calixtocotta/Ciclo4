@@ -15,13 +15,13 @@ import org.springframework.data.annotation.Id;
  *
  * @author calix
  */
-@Document(collection = "Clothe")
+@Document(collection = "clothe")
 /*@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter*/
-public class Clothe{
+public class clothe{
     @Id
     private String reference;
     private String category;
@@ -32,10 +32,10 @@ public class Clothe{
     private int quantity;
     private String photography; 
 
-    public Clothe() {
+    public clothe() {
     }
 
-    public Clothe(String reference, String category, String size, String description, double price, int quantity, String photography) {
+    public clothe(String reference, String category, String size, String description, double price, int quantity, String photography) {
         this.reference = reference;
         this.category = category;
         this.size = size;

@@ -1,6 +1,6 @@
 package ciclo4.ciclo4.Servicios;
 
-import ciclo4.ciclo4.Modelo.Clothe;
+import ciclo4.ciclo4.Modelo.clothe;
 import ciclo4.ciclo4.Repositorio.clotheRepositorio;
 import java.util.List;
 import java.util.Optional;
@@ -13,15 +13,15 @@ public class serviciosClothe {
     @Autowired
     private clotheRepositorio metodosCrud;
 
-        public List<Clothe> getAll() {
+        public List<clothe> getAll() {
         return metodosCrud.getAll();
     }
 
-    public Optional<Clothe> getClothe(String reference) {
+    public Optional<clothe> getClothe(String reference) {
         return metodosCrud.getClothe(reference);
     }
 
-    public Clothe create(Clothe accesory) {
+    public clothe create(clothe accesory) {
         if (accesory.getReference() == null) {
             return accesory;
         } else {
@@ -29,9 +29,9 @@ public class serviciosClothe {
         }
     }
 
-    public Clothe update(Clothe clothe){
+    public clothe update(clothe clothe){
         if (clothe.getReference()!= null){
-            Optional<Clothe> clotheDb = metodosCrud.getClothe(clothe.getReference());
+            Optional<clothe> clotheDb = metodosCrud.getClothe(clothe.getReference());
             if (!clotheDb.isEmpty()){
                 if (clothe.getReference()!=null){
                     clotheDb.get().setReference(clothe.getReference());

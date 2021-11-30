@@ -2,7 +2,7 @@
 package ciclo4.ciclo4.Servicios;
 
 import ciclo4.ciclo4.Modelo.User;
-import ciclo4.ciclo4.Repositorio.userRepositorio;
+import ciclo4.ciclo4.Repositorio.UserRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class serviciosUser {
     
     @Autowired
-    private userRepositorio metodosCrud;
+    private UserRepositorio metodosCrud;
     
 
     

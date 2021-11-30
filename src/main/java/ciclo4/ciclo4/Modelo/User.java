@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author calix
  */
-@Document(collection = "User")
+@Document(collection = "user")
 /*@Data
 @NoArgsConstructor
 @AllArgsConstructor
