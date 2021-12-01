@@ -4,6 +4,12 @@
     border-radius: 20px;
 }
 
+#salir{
+    width: 40px;
+    left: 40px;
+    border-radius: 20px;
+}
+
 header{
     text-align: center;
 }
@@ -327,3 +333,8 @@ tr {
     }
 }
 
+#bienvenido{
+    width: auto;
+    min-width: auto;
+
+}
