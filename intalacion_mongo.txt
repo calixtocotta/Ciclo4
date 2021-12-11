@@ -1,0 +1,27 @@
+1. Crear el repositorio donde se guardará de la sigiente manedra:
+
+sudo vim /etc/yum.repos.d/mongodb-org-5.0.repo
+
+2. Despues del comando anterior, presionar "a" para editar y pegar lo siguente:
+
+[mongodb-org-5.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/5.0/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
+
+despues presionar "esc" y posteriormente escribir ":x!" y presionamos la tecla Enter
+
+3. Instalar Mongo:
+Pegamos la siguiente instruccion: 
+
+	sudo yum install -y mongodb-org
+
+4. Despues de instalado podemos inicar mongo con la siguiente instruccion:
+
+	sudo systemctl start mongod
+
+mongod --version
+sudo systemctl daemon-reload
+sudo systemctl status mongod
