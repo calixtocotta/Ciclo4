@@ -1,6 +1,7 @@
 
 package ciclo4.ciclo4.Modelo;
 
+import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -22,6 +23,8 @@ public class User{
     private Integer id;
     private String identification;
     private String name;
+    private Date birthtDay;
+    private String monthBirthtDay;
     private String address;
     private String cellPhone;
     private String email;
@@ -32,10 +35,12 @@ public class User{
     public User() {
     }
 
-    public User(Integer id, String identification, String name, String address, String cellPhone, String email, String password, String zone, String type) {
+    public User(Integer id, String identification, String name, Date birthtDay, String monthBirthtDay, String address, String cellPhone, String email, String password, String zone, String type) {
         this.id = id;
         this.identification = identification;
         this.name = name;
+        this.birthtDay = birthtDay;
+        this.monthBirthtDay = monthBirthtDay;
         this.address = address;
         this.cellPhone = cellPhone;
         this.email = email;
@@ -66,6 +71,22 @@ public class User{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Date getBirthtDay() {
+        return birthtDay;
+    }
+
+    public void setBirthtDay(Date birthtDay) {
+        this.birthtDay = birthtDay;
+    }
+
+    public String getMonthBirthtDay() {
+        return monthBirthtDay;
+    }
+
+    public void setMonthBirthtDay(String monthBirthtDay) {
+        this.monthBirthtDay = monthBirthtDay;
     }
 
     public String getAddress() {
@@ -115,6 +136,7 @@ public class User{
     public void setType(String type) {
         this.type = type;
     }
-    
+
+   
         
 }

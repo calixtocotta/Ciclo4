@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Inicio</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, inicial-scale=1"/>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="stylesheet" href="estilos/estiloTienda.css">
+</head>
+<body>
+    <div class="header d-flex" id="menu">
+        <div class=""><a><span id="user"></span></a></div>
+        <div class="">
+            <a href="javascript:cerrar()">Salir</a>
+        </div>
+    </div>
+<header>
+    <h1 id="header">Tienda</h1>
+</header>
+
+<nav>
+</nav>
+
+<section class="container" >
+    <div class="card" id="bienvenido">
+        <div id="resultado">
+        </div>
+        
+    </div>
+
+</section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/misFuncionesTienda.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            
+</body>
+<script>
+    $("#btn-actualizar").hide();
+    traerInformacion();
+    $('#link').click(function(event){
+        crearCuenta();
+    return false; 
+    });
+
+    let firstData = null;
+    //console.log(localStorage.getItem("object_name"))
+    if(localStorage.getItem("object_name")!=null){
+        let myData = localStorage.getItem("object_name");
+        //localStorage.removeItem( 'object_name' ); // Clear the localStorage
+        firstData = JSON.parse(myData);
+        if(firstData.type=="USER"){
+            $("#user").html(firstData.name);
+        }else{
+            cerrar();
+        }
+    }else{
+        cerrar()
+    }
+
+    function cerrar(){
+        $(document).ready(function(){
+            localStorage.removeItem( 'object_name' );
+            $(location).attr('href',"userInterfaz.html");
+        });
+        //console.log("entro aqui")
+    }
+</script>
+</html>

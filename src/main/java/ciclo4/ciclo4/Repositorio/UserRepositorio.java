@@ -40,10 +40,8 @@ public class UserRepositorio {
         crud.delete(user);
     }
     
-    /*
-    public Optional<User> getFindByEmail(String user) {
-        return crud.findByEmail(String user);
+    public Optional<User> lastUserId(){
+        return crud.findTopByOrderByIdDesc();
     }
-    */
     
 }

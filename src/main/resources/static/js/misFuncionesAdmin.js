@@ -22,7 +22,7 @@ document.getElementById('email').addEventListener('input', function() {
 function consultar(){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
     $.ajax({
-        //http://144.22.228.79/
+        //http://144.22.228.79:8080/
         url:"http://144.22.228.79:8080/api/user/"+$('#email').val()+"/"+$('#password').val(),
         type:"GET",
         datatype:"JSON",

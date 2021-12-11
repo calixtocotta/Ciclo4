@@ -30,7 +30,7 @@ function consultar(){
             //console.log(respuesta);
             if(respuesta.id!=null && respuesta.type=="USER"){
                 $("#header").html("BIENVENIDO <br>"+respuesta.name);
-                traerInformacion();
+                traerInformacion(respuesta);
             }else{
                 $("#resultado").html("");
                 $("#validarCampos").html("<h4 style='color: red'>No existe un usuario</h4>");
@@ -49,12 +49,22 @@ function validar(){
     }
 }
 
-function traerInformacion(){
+function traerInformacion(items){
     $("#resultado").html("<p class='loader text-center'>Cargando...</p>");
     
     $("#lista-clothe").html("");
     $("#btn-consultar").hide();
     
+    let data = {
+        'name' : items.name,
+        'type' : items.type
+    };
+    
+    localStorage.setItem("object_name", JSON.stringify(data));
+
+    $(document).ready(function(){
+        $(location).attr('href',"userInterfaz.html");
+    });
 }
 
 

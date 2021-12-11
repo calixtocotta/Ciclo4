@@ -38,6 +38,8 @@ function pintarRespuesta(items){
     }
     myTable+="</table>";
     $("#resultado").html(myTable);
+    $("#btn-actualizar").hide();
+    $("#btn-guardar").show();
 }
 
 function Editar(id){

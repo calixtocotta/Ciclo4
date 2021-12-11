@@ -1,6 +1,7 @@
 package ciclo4.ciclo4.Interface;
 
 import ciclo4.ciclo4.Modelo.User;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -11,6 +12,11 @@ public interface interfaceUser extends MongoRepository<User, Integer>/*CrudRepos
    
     Optional<User> findByEmail(String email);
    
+ 
+   Optional<User> findTopByOrderByIdDesc();
    
+   //findTopByOrderByCreatedDesc
+
+
     
 }

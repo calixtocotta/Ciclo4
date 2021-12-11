@@ -57,7 +57,7 @@ public class userController {
         User user = servicios.getExistsEmailAndPassword(email, password);
         if (user == null) {
 
-            User noUser = new User(null, null, null, null, null,  null, null, null, null);
+            User noUser = new User(null, null, null, null, null,  null, null, null, null, null, null);
 
             return noUser;
         }
