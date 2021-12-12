@@ -27,18 +27,18 @@ public class Order {
     private User salesMan;
 
     private Map<String, clothe> products;
-    private Map<String, Integer> quantites;
+    private Map<String, Integer> quantities;
 
     public Order() {
     }
 
-    public Order(Integer id, Date RegisterDay, String status, User salesMan, Map<String, clothe> products, Map<String, Integer> quantites) {
+    public Order(Integer id, Date RegisterDay, String status, User salesMan, Map<String, clothe> products, Map<String, Integer> quantities) {
         this.id = id;
         this.RegisterDay = RegisterDay;
         this.status = status;
         this.salesMan = salesMan;
         this.products = products;
-        this.quantites = quantites;
+        this.quantities = quantities;
     }
 
     public static String getPENDING() {
@@ -105,12 +105,12 @@ public class Order {
         this.products = products;
     }
 
-    public Map<String, Integer> getQuantites() {
-        return quantites;
+    public Map<String, Integer> getQuantities() {
+        return quantities;
     }
 
-    public void setQuantites(Map<String, Integer> quantites) {
-        this.quantites = quantites;
+    public void setQuantities(Map<String, Integer> quantities) {
+        this.quantities = quantities;
     }
 
     

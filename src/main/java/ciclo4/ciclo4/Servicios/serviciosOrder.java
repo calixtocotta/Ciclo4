@@ -67,8 +67,8 @@ public class serviciosOrder {
                 if (order.getProducts()!= null) {
                     evt.get().setProducts(order.getProducts());
                 }
-                if (order.getQuantites() != null) {
-                    evt.get().setQuantites(order.getQuantites());
+                if (order.getQuantities()!= null) {
+                    evt.get().setQuantities(order.getQuantities());
                 }
                 metodosCrud.save(evt.get());
                 return evt.get();

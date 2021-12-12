@@ -42,6 +42,11 @@ public class orderController {
     public Optional<Order> Order(@PathVariable("id") Integer id) {
         return servicios.getOrder(id);
     }
+    
+    @GetMapping("/zona/{zona}")
+    public List<Order> getZona(@PathVariable("zona") String zona) {
+        return servicios.findByZone(zona);
+    }
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
