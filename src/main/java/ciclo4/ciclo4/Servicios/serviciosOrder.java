@@ -92,7 +92,11 @@ public class serviciosOrder {
     public List<Order> findByZone(String zona) {
         return metodosCrud.findByZone(zona);
     }
-    /*
+    
+    public List<Order> SalesMan(int id) {
+        return metodosCrud.SalesMan(id); 
+    }
+
      public List<Order> ordersSalesManByDate(String dateStr, int id) {
         return metodosCrud.ordersSalesManByDate(dateStr, id);
     }
@@ -100,5 +104,5 @@ public class serviciosOrder {
     public List<Order> ordersSalesManByState(String state, Integer id) {
          return metodosCrud.ordersSalesManByState(state, id);
      }
-     */
+     
 }

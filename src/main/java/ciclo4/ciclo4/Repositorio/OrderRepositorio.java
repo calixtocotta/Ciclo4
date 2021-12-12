@@ -42,17 +42,20 @@ public class OrderRepositorio {
     }
 
     public List<Order> findByZone(String zona) {
-        return crud.findByZone(zona); //To change body of generated methods, choose Tools | Templates.
+        return crud.findByZone(zona);
+    }
+    
+    public List<Order> SalesMan(int id) {
+        return crud.findSalesManById(id); 
     }
 
-    /*
     public List<Order> ordersSalesManByDate(String dateStr, int id) {
-        return crud.findByStatus(dateStr,id); //To change body of generated methods, choose Tools | Templates.
+        return crud.findSalesManByDate(dateStr,id); 
     }
 
     public List<Order> ordersSalesManByState(String state, Integer id) {
-        return crud.ordersSalesManByState(state,id); //To change body of generated methods, choose Tools | Templates.
+        return crud.findSalesManByState(state,id);
     }
-    */
+    
 }
 

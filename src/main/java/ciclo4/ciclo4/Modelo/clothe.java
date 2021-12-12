@@ -16,11 +16,9 @@ import org.springframework.data.annotation.Id;
  * @author calix
  */
 @Document(collection = "clothe")
-/*@Data
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter*/
 public class clothe{
     @Id
     private String reference;
@@ -31,7 +29,7 @@ public class clothe{
     private double price;
     private int quantity;
     private String photography; 
-
+/*
     public clothe() {
     }
 
@@ -108,5 +106,5 @@ public class clothe{
     public void setPhotography(String photography) {
         this.photography = photography;
     }
-    
+  */  
 }

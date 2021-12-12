@@ -2,6 +2,9 @@
 package ciclo4.ciclo4.Modelo;
 
 import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,12 +14,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author calix
  */
 @Document(collection = "user")
-/*@Data
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-*/
 public class User{
    
     @Id
@@ -32,6 +32,7 @@ public class User{
     private String zone;
     private String type;
 
+    /*
     public User() {
     }
 
@@ -137,6 +138,6 @@ public class User{
         this.type = type;
     }
 
-   
+   */
         
 }
