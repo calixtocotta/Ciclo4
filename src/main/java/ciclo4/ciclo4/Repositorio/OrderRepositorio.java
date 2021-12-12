@@ -44,7 +44,6 @@ public class OrderRepositorio {
     public List<Order> findByZone(String zona) {
         return crud.findByZone(zona);
     }
-    /*
     public List<Order> SalesMan(int id) {
         return crud.findSalesManById(id); 
     }
@@ -56,6 +55,6 @@ public class OrderRepositorio {
     public List<Order> ordersSalesManByState(String state, Integer id) {
         return crud.findSalesManByState(state,id);
     }
-    */
+    
 }
 
