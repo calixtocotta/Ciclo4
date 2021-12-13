@@ -24,11 +24,11 @@ public class Ciclo4Application implements CommandLineRunner {
 	}
     @Override
     public void run(String... args) throws Exception {
-        /*
+  
         interfaceClothe.deleteAll();
         interfaceUser.deleteAll();
         interOrder.deleteAll();
-        */
+        
         
     }
 }
