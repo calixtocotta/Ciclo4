@@ -27,7 +27,7 @@ public interface interfaceOrder extends MongoRepository<Order, Integer> {
     //Para seleccionar la orden con el id maximo
     Optional<Order> findTopByOrderByIdDesc();
     
-    List<Order> findSalesManById(Integer id);
+    List<Order> findSalesManById(int id);
     
     List<Order> findSalesManByState(final String state, Integer id);
     

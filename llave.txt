@@ -1,6 +1,7 @@
 ssh -i ssh-key-2021-10-09.key opc@144.22.228.79
 
 ps aux | grep java
+sudo kill -9 
 mvn clean package -DskipTests
 
 sudo yum install git
