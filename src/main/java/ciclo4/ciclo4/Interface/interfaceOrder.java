@@ -28,9 +28,9 @@ public interface interfaceOrder extends MongoRepository<Order, Integer> {
     Optional<Order> findTopByOrderByIdDesc();
     
     List<Order> findSalesManById(int id);
-    
+    /*
     List<Order> findSalesManByState(final String state, Integer id);
     
     List<Order> findSalesManByDate(String dateStr, int id);
-    
+    */
 }
