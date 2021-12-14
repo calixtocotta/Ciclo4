@@ -94,7 +94,7 @@ public class serviciosOrder {
     }
    
     public List<Order> SalesMan(int id) {
-        return metodosCrud.SalesMan(id); 
+        return metodosCrud.ordersSalesManByID(id); 
     }
 
      public List<Order> ordersSalesManByDate(String dateStr, int id) {
