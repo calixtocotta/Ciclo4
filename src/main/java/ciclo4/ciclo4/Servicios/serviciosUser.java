@@ -21,6 +21,10 @@ public class serviciosUser {
         return metodosCrud.getUser(id);
     }
 
+    public List<User> getMonth(String month) {
+        return metodosCrud.getMonth(month);
+    }
+    
     public boolean existeEmail(String email) {
         return metodosCrud.existeEmail(email);
     }

@@ -21,6 +21,14 @@ public class clotheRepositorio {
     public Optional<clothe> getClothe(String reference) {
         return crud.findById(reference);
     }
+    
+    public List<clothe> getPrice(double price) {
+        return crud.findByPrice(price);
+    }
+    
+    public List<clothe> getDescription(String description) {
+        return crud.findByDescriptionContainingIgnoreCase(description);
+    }
 
     public clothe create(clothe clothe) {
         return crud.save(clothe);

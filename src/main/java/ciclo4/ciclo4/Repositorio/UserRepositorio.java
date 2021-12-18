@@ -23,6 +23,10 @@ public class UserRepositorio {
         return crud.findById(id);
     }
     
+    public List<User> getMonth(String month){
+        return (List<User>) crud.findByMonthBirthtDay(month);
+    }
+     
     public boolean existeEmail(String email){
             Optional<User> usuario = crud.findByEmail(email);
             return  !usuario.isEmpty();

@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping("/api/user")
 @CrossOrigin("*")
 public class userController {
-    
+
     @Autowired
     private serviciosUser servicios;
 
@@ -37,19 +37,23 @@ public class userController {
     public List<User> getAll() {
         return servicios.getAll();
     }
-    
+
     @GetMapping("/{id}")
     public User getUser(@PathVariable Integer id) {
         return servicios.getUser(id).orElse(null);
     }
-    
+
     @GetMapping("/emailexist/{email}")
     public boolean existeEmail(@PathVariable("email") String email) {
 
         return servicios.existeEmail(email);
-        
+
     }
     
+    @GetMapping("/birthtDay/{month}")
+    public List<User> Month(@PathVariable("month") String month) {
+        return servicios.getMonth(month);
+    }
 
     @GetMapping("/{email}/{password}")
     public User getEmailAndPassword(@PathVariable("email") String email, @PathVariable("password") String password) {
@@ -57,18 +61,18 @@ public class userController {
         User user = servicios.getExistsEmailAndPassword(email, password);
         if (user == null) {
 
-            User noUser = new User(null, null, null, null, null,  null, null, null, null, null, null);
+            User noUser = new User(null, null, null, null, null, null, null, null, null, null, null);
 
             return noUser;
         }
         return user;
     }
-    
+
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<User> save(@RequestBody User user) throws Exception {
         User u = servicios.save(user);
-        
+
         return new ResponseEntity(u, HttpStatus.CREATED);
 
     }
@@ -78,7 +82,7 @@ public class userController {
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity update(@RequestBody User user) {
         User u = servicios.update(user);
-        
+
         return new ResponseEntity(u, HttpStatus.CREATED);
     }
 
@@ -86,10 +90,8 @@ public class userController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity delete(@PathVariable("id") int Id) {
         servicios.deleteUser(Id);
-        
+
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-
-    
 }

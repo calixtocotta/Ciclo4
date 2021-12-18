@@ -20,6 +20,14 @@ public class serviciosClothe {
     public Optional<clothe> getClothe(String reference) {
         return metodosCrud.getClothe(reference);
     }
+    
+    public List<clothe> getPrice(double price) {
+        return metodosCrud.getPrice(price);
+    }
+    
+    public List<clothe> getDescription(String description) {
+        return metodosCrud.getDescription(description);
+    }
 
     public clothe create(clothe accesory) {
         if (accesory.getReference() == null) {

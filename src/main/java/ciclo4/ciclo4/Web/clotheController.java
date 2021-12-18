@@ -34,6 +34,16 @@ public class clotheController {
     public Optional<clothe> Clothe(@PathVariable("reference") String reference) {
         return servicios.getClothe(reference);
     }
+    
+    @GetMapping("/price/{price}")
+    public List<clothe> Price(@PathVariable("price") double price) {
+        return servicios.getPrice(price);
+    }
+    
+    @GetMapping("/description/{description}")
+    public List<clothe> Description(@PathVariable("description") String description) {
+        return servicios.getDescription(description);
+    }
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
