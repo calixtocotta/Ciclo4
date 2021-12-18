@@ -50,7 +50,7 @@ public class userController {
 
     }
     
-    @GetMapping("/birthtDay/{month}")
+    @GetMapping("/birthday/{month}")
     public List<User> Month(@PathVariable("month") String month) {
         return servicios.getMonth(month);
     }
