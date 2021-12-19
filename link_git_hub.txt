@@ -1,2 +1,5 @@
 https://github.com/calixtocotta/Ciclo4.git
 link instancia http://144.22.228.79/
+
+link repositorio de el frontend, se hizo lo que se pudo profe
+https://github.com/calixtocotta/Reto_5.git
